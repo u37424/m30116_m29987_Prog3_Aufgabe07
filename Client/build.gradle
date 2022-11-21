@@ -1,0 +1,11 @@
+plugins {
+    id 'application'
+}
+application {
+    mainModule = 'de.medieninformatik.Client'
+    mainClass = 'de.medieninformatik.Client.Client'
+}
+
+dependencies {
+    implementation project(':Theatre')
+}

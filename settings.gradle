@@ -1,0 +1,6 @@
+rootProject.name = "m30116_m29987_Prog3_Aufgabe07"
+include 'Server'
+include 'Client'
+include 'Seat'
+include 'Theatre'
+
