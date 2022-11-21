@@ -75,7 +75,11 @@ public class Client extends Application {
                 mode.setText("Namen anzeigen");
             }
         });
-        update.setOnAction(e -> updateData());
+        update.setOnAction(e -> {
+            updateData();
+            information.setContentText("Updated Data!");
+            information.showAndWait();
+        });
         vbox.getChildren().addAll(pane, update, mode);
         stage.setScene(new Scene(vbox, STAGE_WIDTH, STAGE_HEIGHT));
         stage.setTitle("Vorverkaufsstelle");
@@ -87,8 +91,6 @@ public class Client extends Application {
     private void updateData() {
         Theatre t = getServerData();
         updateGrid(t);
-        information.setContentText("Updated Data!");
-        information.showAndWait();
     }
 
     private void updateGrid(Theatre theatre) {
@@ -125,7 +127,7 @@ public class Client extends Application {
         if (showNames) {
             try {
                 information.setContentText(s.isBooked() ? reservierung.getName(s.getRow(), s.getColumn()) : "Platz ist frei.");
-            } catch (Exception e){
+            } catch (Exception e) {
 
             }
             information.showAndWait();
@@ -148,6 +150,7 @@ public class Client extends Application {
             }
             information.setContentText(text);
             information.showAndWait();
+            updateData();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
