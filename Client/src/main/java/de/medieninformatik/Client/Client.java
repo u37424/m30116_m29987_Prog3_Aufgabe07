@@ -14,6 +14,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.rmi.RemoteException;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 public class Client extends Application {
     private static final double STAGE_WIDTH = 1000.0;
